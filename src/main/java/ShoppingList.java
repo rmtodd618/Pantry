@@ -5,18 +5,13 @@ import java.util.Scanner;
  * Created by ryantodd on 12/1/15.
  */
 
-package Household;
-
 
 /**
  * Created by dev on 9/27/15.
  */
 public class ShoppingList {
 
-
-
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         HashMap<String, Integer> pantry = new HashMap<String, Integer>();
 
@@ -26,24 +21,23 @@ public class ShoppingList {
         System.out.println("Type 'edit' to adjust the items in your pantry");
         System.out.println("Type 'list' to get a list of all items that are currently in your pantry");
 
-        Scanner user_input = new Scanner( System.in );
 
-        String choice;
-        choice = user_input.next();
+        Scanner user_input = new Scanner(System.in);
 
-        switch (choice){
+        String choice = user_input.next();
+
+        switch (choice) {
 
             case "add":
                 System.out.println("What item would you like to add to your pantry?");
                 String item = user_input.next();
-                if (item = null) {
+                if (item == null) {
                     System.out.println("You didnt enter anything");
                 } else {
                     System.out.println("What is the amount that you would like to add?");
                     int amount = user_input.nextInt();
 
-
-                    pantry.put(item);
+                    pantry.put(item, amount);
 
                 }
 
@@ -58,7 +52,7 @@ public class ShoppingList {
 
             case "list":
                 System.out.println("Here is a list of all of the items in your pantry!");
-                for (i = 0; i < pantry.size(); i++){
+                for (int i = 0; i < pantry.size(); i++) {
 
                     System.out.println(pantry.keySet());
                 }
@@ -66,9 +60,5 @@ public class ShoppingList {
     }
 
 
-
-
-
-
 }
-}
+
